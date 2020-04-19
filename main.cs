@@ -6,19 +6,23 @@ class MainClass
   public static void Main(string[] args)
   {
     Experimentor experimentor = new Experimentor();
-    experimentor.applyStateToPerson();
-    experimentor.person.state = PersonState.Eating;
-    experimentor.applyStateToPerson();
-    experimentor.person.state = PersonState.Eating;
-    experimentor.applyStateToPerson();
-    experimentor.applyStateToPerson();
-    experimentor.person.state = PersonState.Drinking;
-    experimentor.applyStateToPerson();
-    experimentor.applyStateToPerson();
-    experimentor.person.state = PersonState.Napping;
-    experimentor.applyStateToPerson();
-    experimentor.applyStateToPerson();
-    experimentor.person.state = PersonState.Running;
-    experimentor.applyStateToPerson();
+    experimentor.ApplyStateToPerson();
+    experimentor.ApplyStateToPerson();
+
+    experimentor.UpdatePersonActivity("nap");
+    experimentor.ApplyStateToPerson();
+    experimentor.ApplyStateToPerson();
+
+    experimentor.UpdatePersonActivity("drink");
+    experimentor.ApplyStateToPerson();
+    experimentor.ApplyStateToPerson();
+
+    experimentor.UpdatePersonActivity("eat");
+    experimentor.ApplyStateToPerson();
+    experimentor.ApplyStateToPerson();
+
+    experimentor.UpdatePersonActivity("relax");
+    experimentor.ApplyStateToPerson();
+
   }
 }

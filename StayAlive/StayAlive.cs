@@ -27,27 +27,6 @@ namespace StayAlive
     }
   }
 
-  public static class StringHelper
-  {
-    public static string KeepSize(string str, int size = 6)
-    {
-      return str.PadRight(size - str.Length);
-    }
-
-    public static string KeepSize(float input, int size = 6)
-    {
-      int extraLength = 0;
-      if (input < 0)
-      {
-        extraLength = 1;
-      }
-
-      string str = input.ToString();
-
-      return str.PadRight(size - str.Length + extraLength);
-    }
-  }
-
   /// <summary>
   /// Tracks rate of change or current state
   /// </summary>
@@ -105,7 +84,8 @@ namespace StayAlive
       _weight = weight;
     }
 
-    private static float CheckedNewValue(float newValue) {
+    private static float CheckedNewValue(float newValue)
+    {
       return newValue >= 0 && newValue <= 100 ? newValue : 0;
     }
 
@@ -124,7 +104,7 @@ namespace StayAlive
 
     public override string ToString()
     {
-      return $"Satiation: {StringHelper.KeepSize(_satiation)}\tHydration: {StringHelper.KeepSize(_hydration)}\tStamina: {StringHelper.KeepSize(_energy)}\tWeight: {StringHelper.KeepSize(_weight)}";
+      return $"Satiation: {_satiation}\tHydration: {_hydration}\tStamina: {_energy}\tWeight: {_weight}";
     }
   }
 

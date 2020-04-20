@@ -86,7 +86,15 @@ namespace StayAlive
 
     private static float CheckedNewValue(float newValue)
     {
-      return newValue >= 0 && newValue <= 100 ? newValue : 0;
+      if(newValue >= 100) {
+        return 100;
+      }
+
+      if(newValue <= 0){
+        return 0;
+      }
+
+      return newValue;
     }
 
     private static void CheckFactorSet(float newValue, Exception lowException, Exception highException)
